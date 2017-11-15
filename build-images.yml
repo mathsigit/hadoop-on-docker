@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  centos:
+    build:
+      context: ./centos
+    image: mathstana/centos:6.6-jdk8
+
+  hadoop:
+    build:
+      context: ./hadoop
+    image: mathstana/hadoop:${HADOOP_VERSION}
+    depends_on:
+      - centos
