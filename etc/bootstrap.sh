@@ -26,9 +26,6 @@ if [[ $1 == "MASTER" ]]; then
   $HADOOP_PREFIX/sbin/start-dfs.sh
   $HADOOP_PREFIX/sbin/start-yarn.sh
   $HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
-  #START HBASE
-  /opt/hbase/bin/start-hbase.sh
-
 fi
 
 #Persist container instance
