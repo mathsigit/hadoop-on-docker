@@ -21,7 +21,9 @@
 export HDFS_DATANODE_USER=root
 export HDFS_NAMENODE_USER=root
 export HDFS_SECONDARYNAMENODE_USER=root
+export HDFS_DATANODE_SECURE_USER=root
 export YARN_RESOURCEMANAGER_USER=root
+export YARN_NODEMANAGER_USER=root
 
 ##
 ## THIS FILE ACTS AS THE MASTER FILE FOR ALL HADOOP PROJECTS.
@@ -340,7 +342,7 @@ export HDFS_SECONDARYNAMENODE_OPTS="-Dhadoop.security.logger=${HADOOP_SECURITY_L
 # defined if SASL is configured for authentication of data transfer protocol
 # using non-privileged ports.
 # This will replace the hadoop.id.str Java property in secure mode.
-export HDFS_DATANODE_SECURE_USER=hdfs
+# export HDFS_DATANODE_SECURE_USER=hdfs
 
 # Copy from hadoop 2.x, and change name from HADOOP_SECURE_DN_LOG_DIR to HADOOP_SECURE_LOG_DIR.
 # Where log files are stored in the secure data environment.
