@@ -34,9 +34,6 @@ services:
     depends_on:
       - slave1
       - slave2
-    links:
-      - slave1
-      - slave2
     entrypoint: /opt/bootstrap.sh MASTER ${NODE_HOST_MASTER}
     networks:
       docker_net:

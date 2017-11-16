@@ -39,6 +39,5 @@ services:
       - "8040"
       - "49707"
       - "2122"
-      - "2181"
   slave:
     extends: baseeenv
