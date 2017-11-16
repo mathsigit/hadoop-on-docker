@@ -22,10 +22,10 @@
 # remote nodes.
 
 ##For Hadoop 3.0.0
-HDFS_DATANODE_USER=root
-HADOOP_SECURE_DN_USER=hdfs
-HDFS_NAMENODE_USER=root
-HDFS_SECONDARYNAMENODE_USER=root
+export HDFS_DATANODE_USER=root
+export HADOOP_SECURE_DN_USER=hdfs
+export HDFS_NAMENODE_USER=root
+export HDFS_SECONDARYNAMENODE_USER=root
 
 # The java implementation to use.
 #export JAVA_HOME=${JAVA_HOME}
