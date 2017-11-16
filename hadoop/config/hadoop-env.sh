@@ -21,6 +21,12 @@
 # set JAVA_HOME in this file, so that it is correctly defined on
 # remote nodes.
 
+##For Hadoop 3.0.0
+HDFS_DATANODE_USER=root
+HADOOP_SECURE_DN_USER=hdfs
+HDFS_NAMENODE_USER=root
+HDFS_SECONDARYNAMENODE_USER=root
+
 # The java implementation to use.
 #export JAVA_HOME=${JAVA_HOME}
 export JAVA_HOME=/jdk1.8.0_162
