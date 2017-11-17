@@ -428,4 +428,3 @@ export HDFS_PORTMAP_OPTS="-Xmx512m ${HDFS_PORTMAP_OPTS}"
 # It uses the format of (command)_(subcommand)_USER.
 #
 # For example, to limit who can execute the namenode command,
-export HDFS_NAMENODE_USER=hdfs

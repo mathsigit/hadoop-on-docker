@@ -15,8 +15,9 @@ services:
       - ${NODE_HOST_SLAVE2}:${NODE_IP_SLAVE2}
   master:
     extends: baseeenv
+    #To see https://issues.apache.org/jira/browse/HDFS-9427 for change ports in version 3.0.0
     ports:
-      - "50070:50070"
+      - "9870:9870"
       #Yran port
       - "8088:8088"
       # AM port
@@ -24,21 +25,17 @@ services:
       # Historyserver port
       - "19888:19888"
     expose:
-      - "50010"
-      - "50020"
-      - "50070"
-      - "50075"
-      - "50090"
-      - "8020"
-      - "9000"
-      - "10020"
-      - "19888"
-      - "8030"
-      - "8031"
-      - "8032"
-      - "8033"
-      - "8040"
-      - "49707"
-      - "2122"
+      #Namenode ports:
+      - "9820"
+      - "9871"
+      - "9870"
+      #Secondary NN ports:
+      - "9869"
+      - "9868"
+      #Datanode ports:
+      - "9867"
+      - "9866"
+      - "9865"
+      - "9864"
   slave:
     extends: baseeenv
