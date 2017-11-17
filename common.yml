@@ -6,7 +6,7 @@ services:
     tty: true
     volumes:
       - ./centos/start-service.sh:/opt/start-service.sh
-      - ./etc/slaves:/opt/hadoop/etc/hadoop/slaves
+      - ./etc/slaves:/opt/hadoop/etc/hadoop/workers
       - ./etc/ready-config.sh:/opt/ready-config.sh
       - ./etc/bootstrap.sh:/opt/bootstrap.sh
     extra_hosts:
@@ -35,6 +35,7 @@ services:
       - "19888"
       - "8030"
       - "8031"
+      - "8032"
       - "8033"
       - "8040"
       - "49707"

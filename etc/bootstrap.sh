@@ -25,7 +25,8 @@ if [[ $1 == "MASTER" ]]; then
   #START HDFS
   $HADOOP_PREFIX/sbin/start-dfs.sh
   $HADOOP_PREFIX/sbin/start-yarn.sh
-  $HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
+  #$HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
+  $HADOOP_PREFIX/bin/mapred --daemon start historyserver
 fi
 
 #Persist container instance
