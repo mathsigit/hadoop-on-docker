@@ -24,6 +24,8 @@ services:
       - "8042:8042"
       # Historyserver port
       - "19888:19888"
+      # The https address the MapReduce JobHistory Server WebApp is on..
+      - "19890:19890"
     expose:
       #Namenode ports:
       - "9820"
