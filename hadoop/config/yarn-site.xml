@@ -3,10 +3,10 @@
      <name>yarn.nodemanager.aux-services</name>
      <value>mapreduce_shuffle</value>
   </property>
-  <property>
+  <!-- <property>
       <name>yarn.nodemanager.address</name>
       <value>0.0.0.0:8034</value>
-  </property>
+  </property> -->
   <property>
        <name>yarn.log-aggregation-enable</name>
        <value>true</value>
@@ -14,5 +14,6 @@
   <property>
        <name>yarn.resourcemanager.hostname</name>
        <value>{MASTER}</value>
+       <description>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components. </description>
   </property>
 </configuration>
