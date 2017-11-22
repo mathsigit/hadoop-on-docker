@@ -31,11 +31,6 @@
     <value>{MASTER}:19888</value>
     <description>MapReduce JobHistory Server Web UI host:port</description>
   </property>
-  <!--<property>
-    <name>mapreduce.jobhistory.webapp.https.address</name>
-    <value>{MASTER}:19890</value>
-    <description>The https address the MapReduce JobHistory Server WebApp is on. </description>
-  </property>-->
   <property>
     <name>mapreduce.jobhistory.intermediate-done-dir</name>
     <value>/mr-history/tmp</value>

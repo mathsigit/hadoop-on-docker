@@ -15,15 +15,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Set Hadoop-specific environment variables here.
-
 ##For Hadoop 3.0.0
-export HDFS_DATANODE_USER=root
 export HDFS_NAMENODE_USER=root
+export HDFS_DATANODE_USER=root
 export HDFS_SECONDARYNAMENODE_USER=root
-export HDFS_DATANODE_SECURE_USER=root
 export YARN_RESOURCEMANAGER_USER=root
 export YARN_NODEMANAGER_USER=root
+
+# Set Hadoop-specific environment variables here.
 
 ##
 ## THIS FILE ACTS AS THE MASTER FILE FOR ALL HADOOP PROJECTS.
@@ -59,7 +58,6 @@ export YARN_NODEMANAGER_USER=root
 
 # The java implementation to use. By default, this environment
 # variable is REQUIRED on ALL platforms except OS X!
-# export JAVA_HOME=
 export JAVA_HOME=/jdk1.8.0_162
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
@@ -74,7 +72,7 @@ export JAVA_HOME=/jdk1.8.0_162
 # /etc/profile.d or equivalent.  Some options (such as
 # --config) may react strangely otherwise.
 #
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+# export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
 
 # The maximum amount of heap to use (Java -Xmx).  If no unit
 # is provided, it will be converted to MB.  Daemons will
@@ -97,7 +95,6 @@ export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
 # Extra Java runtime options for all Hadoop commands. We don't support
 # IPv6 yet/still, so by default the preference is set to IPv4.
 # export HADOOP_OPTS="-Djava.net.preferIPv4Stack=true"
-export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true"
 # For Kerberos debugging, an extended option set logs more invormation
 # export HADOOP_OPTS="-Djava.net.preferIPv4Stack=true -Dsun.security.krb5.debug=true -Dsun.security.spnego.debug"
 
@@ -124,7 +121,6 @@ esac
 # such commands.  In most cases, # this should be left empty and
 # let users supply it on the command line.
 # export HADOOP_CLIENT_OPTS=""
-export HADOOP_CLIENT_OPTS="-Xmx512m $HADOOP_CLIENT_OPTS"
 
 #
 # A note about classpaths.
@@ -223,7 +219,7 @@ export HADOOP_CLIENT_OPTS="-Xmx512m $HADOOP_CLIENT_OPTS"
 
 # Default log4j setting for interactive commands
 # Java property: hadoop.root.logger
-# export HADOOP_ROOT_LOGGER=INFO,console
+export HADOOP_ROOT_LOGGER=DEBUG,console
 
 # Default log4j setting for daemons spawned explicitly by
 # --daemon option of hadoop, hdfs, mapred and yarn command.
@@ -311,9 +307,7 @@ export HADOOP_CLIENT_OPTS="-Xmx512m $HADOOP_CLIENT_OPTS"
 # export HDFS_NAMENODE_OPTS="-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:${HADOOP_LOG_DIR}/gc-rm.log-$(date +'%Y%m%d%H%M')"
 
 # this is the default:
-# export HDFS_NAMENODE_OPTS="-Dhadoop.security.logger=INFO,RFAS"
-
-export HDFS_NAMENODE_OPTS="-Dhadoop.security.logger=INFO,RFAS -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:${HADOOP_LOG_DIR}/gc-rm.log-$(date +'%Y%m%d%H%M')"
+export HDFS_NAMENODE_OPTS="-Dhadoop.security.logger=DEBUG,RFAS"
 
 ###
 # SecondaryNameNode specific parameters
@@ -324,7 +318,6 @@ export HDFS_NAMENODE_OPTS="-Dhadoop.security.logger=INFO,RFAS -verbose:gc -XX:+P
 #
 # This is the default:
 # export HDFS_SECONDARYNAMENODE_OPTS="-Dhadoop.security.logger=INFO,RFAS"
-export HDFS_SECONDARYNAMENODE_OPTS="-Dhadoop.security.logger=${HADOOP_SECURITY_LOGGER:-INFO,RFAS} -Dhdfs.audit.logger=${HDFS_AUDIT_LOGGER:-INFO,NullAppender} $HDFS_SECONDARYNAMENODE_OPTS"
 
 ###
 # DataNode specific parameters
@@ -344,10 +337,6 @@ export HDFS_SECONDARYNAMENODE_OPTS="-Dhadoop.security.logger=${HADOOP_SECURITY_L
 # This will replace the hadoop.id.str Java property in secure mode.
 # export HDFS_DATANODE_SECURE_USER=hdfs
 
-# Copy from hadoop 2.x, and change name from HADOOP_SECURE_DN_LOG_DIR to HADOOP_SECURE_LOG_DIR.
-# Where log files are stored in the secure data environment.
-export HADOOP_SECURE_LOG_DIR=${HADOOP_LOG_DIR}/${HADOOP_HDFS_USER}
-
 # Supplemental options for secure datanodes
 # By default, Hadoop uses jsvc which needs to know to launch a
 # server jvm.
@@ -360,13 +349,13 @@ export HADOOP_SECURE_LOG_DIR=${HADOOP_LOG_DIR}/${HADOOP_HDFS_USER}
 # These options will be appended to the options specified as HADOOP_OPTS
 # and therefore may override any similar flags set in HADOOP_OPTS
 #
-export HDFS_NFS3_OPTS="${HDFS_NFS3_OPTS}"
+# export HDFS_NFS3_OPTS=""
 
 # Specify the JVM options to be used when starting the Hadoop portmapper.
 # These options will be appended to the options specified as HADOOP_OPTS
 # and therefore may override any similar flags set in HADOOP_OPTS
 #
-export HDFS_PORTMAP_OPTS="-Xmx512m ${HDFS_PORTMAP_OPTS}"
+# export HDFS_PORTMAP_OPTS="-Xmx512m"
 
 # Supplemental options for priviliged gateways
 # By default, Hadoop uses jsvc which needs to know to launch a

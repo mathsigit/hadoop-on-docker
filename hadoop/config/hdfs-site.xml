@@ -10,10 +10,8 @@
   </property>
 
   <property>
-       <!-- <name>dfs.data.dir</name> -->
        <name>dfs.datanode.data.dir</name>
-       <value>/dfs/data</value>
-       <description>default: file://${hadoop.tmp.dir}/dfs/data</description>
+       <value>/dfs/datanode</value>
   </property>
 
   <property>
