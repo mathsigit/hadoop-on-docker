@@ -6,7 +6,7 @@
 #start os service
 /opt/start-service.sh
 
-#Edit config: hadoop and hbase
+#Edit config: hadoop
 /opt/ready-config.sh $2
 
 if [[ $1 == "MASTER" ]]; then
@@ -19,16 +19,13 @@ if [[ $1 == "MASTER" ]]; then
   if [ ! -e /tmp/.namenode_formated.format ]
   then
     echo "Namenode Formatted" > /tmp/.namenode_formated.format
-    $HADOOP_PREFIX/bin/hadoop namenode -format
+    $HADOOP_PREFIX/bin/hadoop namenode -format hadoop-cluster
   fi
 
   #START HDFS
   $HADOOP_PREFIX/sbin/start-dfs.sh
   $HADOOP_PREFIX/sbin/start-yarn.sh
-  $HADOOP_PREFIX/sbin/mr-jobhistory-daemon.sh start historyserver
-  #START HBASE
-  /opt/hbase/bin/start-hbase.sh
-
+  $HADOOP_PREFIX/bin/mapred --daemon start historyserver
 fi
 
 #Persist container instance

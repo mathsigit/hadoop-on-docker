@@ -1,48 +1,15 @@
 <configuration>
-
-  <property>
-     <name>mapreduce.framework.name</name>
-     <value>yarn</value>
-  </property>
-
   <property>
      <name>yarn.nodemanager.aux-services</name>
      <value>mapreduce_shuffle</value>
   </property>
-
-  <property>
-      <name>yarn.nodemanager.address</name>
-      <value>0.0.0.0:8034</value>
-  </property>
-
-  <property>
-      <name>yarn.resourcemanager.address</name>
-      <value>{MASTER}:8032</value>
-  </property>
-
-  <property>
-      <name>yarn.resourcemanager.resource-tracker.address</name>
-      <value>{MASTER}:8031</value>
-  </property>
-
-<property>
-       <name>yarn.resourcemanager.scheduler.address</name>
-       <value>{MASTER}:8030</value>
-  </property>
-
   <property>
        <name>yarn.log-aggregation-enable</name>
        <value>true</value>
   </property>
-
   <property>
        <name>yarn.resourcemanager.hostname</name>
        <value>{MASTER}</value>
+       <description>host Single hostname that can be set in place of setting all yarn.resourcemanager*address resources. Results in default ports for ResourceManager components. </description>
   </property>
-
- <property>
-       <name>yarn.resourcemanager.webapp.address</name>
-       <value>{MASTER}:8088</value>
-  </property>
-
 </configuration>
