@@ -28,7 +28,7 @@ And you would get the list of containers:
 
 3. Executing mapreduce example pi:
 
-  ```hadoop jar #HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar pi 16 1000```
+  ```hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar pi 16 1000```
 
   If the program worked correctly, the following should be displayed at the end of the program output stream:
   ```
