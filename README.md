@@ -2,6 +2,7 @@
 Docker file about Hadoop.
 Start all services via docker-compose.
 
+Also see [Hadoop on Docker Hub](https://hub.docker.com/r/mathstana/hadoop/)
 
 ## Env:
 * JDK 1.8.0_162
