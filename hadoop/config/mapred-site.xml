@@ -41,4 +41,17 @@
     <value>/mr-history/done</value>
     <description>Directory where history files are managed by the MR JobHistory Server.</description>
   </property>
+  <!--For hadoop-mapreduce-examples-.jar env using. Be careful to change the below properties.-->
+  <property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+  </property>
+  <property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=/opt/hadoop</value>
+  </property>
 </configuration>
