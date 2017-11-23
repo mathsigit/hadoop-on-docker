@@ -26,6 +26,15 @@ And you would get the list of containers:
 2. Using Hadoop command:
     * `hadoop fs -ls /`
 
+3. Executing mapreduce example pi:
+
+  ```hadoop jar #HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar pi 16 1000```
+
+  If the program worked correctly, the following should be displayed at the end of the program output stream:
+  ```
+  Estimated value of Pi is 3.14250000000000000000
+  ```
+
 ## How To Starting All Containers After Stop
 `docker-compose start`
 
